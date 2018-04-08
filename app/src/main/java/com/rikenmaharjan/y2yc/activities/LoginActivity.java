@@ -11,6 +11,9 @@ import com.rikenmaharjan.y2yc.R;
 import com.rikenmaharjan.y2yc.fragments.LoginFragment;
 
 public class LoginActivity extends BaseFragmentActivity {
+
+    //BaseFragmentActivity calls the following method and create LoginFragment to add to this activity
+
     @Override
     Fragment createFragment() {
         return LoginFragment.newInstance();

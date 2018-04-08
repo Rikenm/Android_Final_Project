@@ -10,4 +10,6 @@ public class Constants {
     //or
     //public static final String IP_LOCAL_HOST = "http://localhost:3000";
 
+    // public static final String IP_LOCAL_HOST
+
 }

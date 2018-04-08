@@ -68,7 +68,7 @@ public class HomeFragment extends BaseFragment {
 
         //if (getArguments()!=null){
 
-        id = getArguments().getString("id"); //gives me null why??????
+        //id = getArguments().getString("id"); //gives me null why??????
         Log.e("inside_the_getarg","hey");
 
         //}
@@ -142,7 +142,7 @@ public class HomeFragment extends BaseFragment {
 
             //String json =  "{\"username\": \"sampada\",\"password\":\"password123\"}";
             id = "003W000000ngacFIAQ";
-            id = params[1];
+            //id = params[1];
             Log.i("param",params[0]+"."+params[1]);
 
             String json =  "{\"rating\": \""+rate+"\",\"comment\":\""+mCommentEt.getText().toString()+"\",\"id\":\""+id+"\"}";
@@ -153,7 +153,10 @@ public class HomeFragment extends BaseFragment {
             try {
                 //URL url = new URL("http://168.122.222.63:3000/login");  // for BU localhost
 
-                URL url = new URL("http://192.168.0.38:3000/edituser"); // riken's house
+                //URL url = new URL("http://192.168.0.38:3000/edituser"); // riken's house
+                URL url = new URL("https://y2y.herokuapp.com/edituser");
+
+                //URL url = new URL("http://155.41.34.62:3000/edituser");
                 //https://y2y.herokuapp.com/login  my heroku
                 //URL url = new URL("http://192.168.0.38:3000/login");  // home local host
                 urlConnection = (HttpURLConnection) url.openConnection();
@@ -214,7 +217,7 @@ public class HomeFragment extends BaseFragment {
         protected void onProgressUpdate(String... progress) {
 
             try {
-                //display response data
+                //display response dataken
 
 
             } catch (Exception ex) {

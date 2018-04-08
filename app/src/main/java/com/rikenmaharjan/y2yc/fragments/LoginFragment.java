@@ -46,6 +46,11 @@ import io.socket.client.Socket;
 
 public class LoginFragment extends BaseFragment {
 
+
+    // using butterknife to make binding buttons easy.
+
+    //username is rikenm and password is "password123"
+
     @BindView(R2.id.fragment_login_userName)
     EditText mUSerNameEt;
 
@@ -56,7 +61,7 @@ public class LoginFragment extends BaseFragment {
     Button mLoginButton;
 
     private Unbinder mUnbinder;
-    private Socket mSocket;
+
 
     String response;
 
@@ -129,8 +134,13 @@ public class LoginFragment extends BaseFragment {
             try {
                 //URL url = new URL("http://168.122.222.63:3000/login");  // for BU localhost
 
-                URL url = new URL("http://192.168.0.38:3000/login"); // riken's house
+                //URL url = new URL("http://192.168.0.38:3000/login"); // riken's house
                 //https://y2y.herokuapp.com/login  my heroku
+                URL url = new URL("https://y2y.herokuapp.com/login");
+
+                //URL url = new URL("http://155.41.34.62:3000/login"); //computerlab ip
+
+
                 //URL url = new URL("http://192.168.0.38:3000/login");  // home local host
                 urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setRequestMethod("POST");
@@ -200,6 +210,7 @@ public class LoginFragment extends BaseFragment {
         }
         protected void onPostExecute(String  result2){
 
+            //if (result2 == null) checks this
             result2 = result2.substring(0,result2.length()-1); //removing the null char
 
             Log.i("isValid", result2);
@@ -244,6 +255,18 @@ public class LoginFragment extends BaseFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mSocket.disconnect();
+
     }
+
+
+    OnCallbackReceived mCallback;
+
+    public interface OnCallbackReceived {
+        public void Update();
+    }
+
+
+
+
+
 }
